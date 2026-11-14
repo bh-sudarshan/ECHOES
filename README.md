@@ -124,11 +124,7 @@ The site does **not** require users to register. Story progress and quiz complet
 
 ## 🤖 AI / Super Intelligence (SI) Disclosure
 
-**AI assistance was used in the development of this project.** OpenAI ChatGPT assisted with concept development, writing and structuring story content, HTML/CSS/JavaScript implementation, educational quiz wording, mission-data organization, and creation of stylized SVG illustrations. Historical claims should be checked against the linked NASA records rather than relying on AI output as a scientific source.
-
-The project uses the browser's speech-synthesis feature to read text aloud; it does not ship prerecorded AI-generated narration. ECHOES is an independent educational prototype, not a NASA product.
-
-**Before final challenge submission:** Ensure all SI-generated images/illustrations carry the **visible SI-generated watermark** required by the event; also add appropriate SI acknowledgments to relevant source-file comments or metadata, and confirm no generated material contains or modifies protected NASA branding. This README disclosure does **not**, by itself, replace those requirements.
+**AI assistance was used in the development of this project.** OpenAI ChatGPT assisted with concept development, writing and structuring story content/
 
 ## 🧪 Suggested Demo Flow
 
