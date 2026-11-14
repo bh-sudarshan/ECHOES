@@ -29,7 +29,7 @@
   function renderAtlas(){
     const arr=data.filter(m=>m.world===atlasWorld);
     $('#atlasWorldName').textContent=atlasWorld.toUpperCase();$('#atlasWorldLabel').textContent=atlasWorld==='mars'?'MARS ARCHIVE':'LUNAR ARCHIVE';$('#atlasWorldCount').textContent=pad(arr.length)+' OBJECTS';
-    const img=$('#atlasPlanet');img.src='assets/images/planet-'+atlasWorld+'.svg';img.alt='Illustrated planet '+(atlasWorld==='mars'?'Mars':'the Moon');
+    const img=$('#atlasPlanet');img.src=window.ECHOES_EXTRA_IMAGES['planet-'+atlasWorld];img.alt='NASA imagery of '+(atlasWorld==='mars'?'Mars':'the Moon')+' (illustrative atlas markers)';
     $$('.world-toggle').forEach(el=>{const active=el.dataset.world===atlasWorld;el.classList.toggle('active',active);el.setAttribute('aria-pressed',String(active));});
     $('#atlasList').innerHTML=arr.map((m,i)=>`<button class="atlas-item" type="button" data-open="${m.id}"><span class="atlas-num">${pad(i+1)}</span><span class="atlas-item-body"><strong>${escapeHTML(m.name)}</strong><small>${m.year} · ${escapeHTML(m.kind)} · ${escapeHTML(m.site)}</small></span><span class="atlas-item-arrow">↗</span></button>`).join('');
     // Artistic coordinates, NOT geographic coordinates; legend is visible beside map.
@@ -45,7 +45,7 @@
     $$('.filter-tab').forEach(el=>{const yes=el.dataset.filter===archiveFilter;el.classList.toggle('active',yes);el.setAttribute('aria-pressed',String(yes));});
     $('#resultsText').textContent=`Showing ${items.length} of ${data.length} archived artifacts`;
     $('#missionGrid').innerHTML=items.map((m)=>`
-       <article class="mission-card"><button class="card-image-button" type="button" data-open="${m.id}" aria-label="Open ${escapeHTML(m.name)} story"><img src="${m.illustration}" alt="Original stylized illustration of ${escapeHTML(m.name)}" loading="lazy"/><span class="card-world">${m.world.toUpperCase()}</span><span class="card-top-right">${m.year}</span></button>
+       <article class="mission-card"><button class="card-image-button" type="button" data-open="${m.id}" aria-label="Open ${escapeHTML(m.name)} story"><img src="${m.illustration}" alt="NASA mission photograph associated with ${escapeHTML(m.name)}" loading="lazy"/><span class="card-world">${m.world.toUpperCase()}</span><span class="card-top-right">${m.year}</span></button>
        <div class="mission-card-body"><div class="card-topline"><span>${escapeHTML(m.kind.toUpperCase())}</span><span>${progress.solved.includes(m.id)?'✳ CASE SOLVED':progress.read.includes(m.id)?'✓ READ':'ARCHIVED'}</span></div><h3>${escapeHTML(m.name)}</h3><p>${escapeHTML(m.tagline)}.</p><div class="card-location"><span>⌖</span>${escapeHTML(m.site)}</div></div>
        <button type="button" class="card-btn" data-open="${m.id}"><span>OPEN THE STORY ${progress.read.includes(m.id)?'<span class="card-complete">✓ EXPLORED</span>':''}</span><span>↗</span></button></article>`).join('');
     $('#emptySearch').hidden=items.length!==0;
@@ -70,7 +70,7 @@
     stopNarration();activeMission=m;chapterIndex=0;showingQuiz=false;quizSolvedNow=false;
     $('#storyNumber').textContent=pad(data.findIndex(x=>x.id===m.id)+1);$('#storyTitle').textContent=m.name;$('#storySite').textContent=m.site;
     $('#storyWorld').textContent=m.world.toUpperCase();$('#storyWorld').className='tag '+(m.world==='mars'?'tag-orange':'tag-blue');
-    $('#storyImage').src=m.illustration;$('#storyImage').alt=`Original stylized illustration of ${m.name}`;
+    $('#storyImage').src=m.illustration;$('#storyImage').alt=`NASA mission photograph associated with ${m.name}`;
     $('#storyType').textContent=m.kind.toUpperCase()+' / '+m.year;$('#storySource').href=m.source;$('#storySource').textContent='Open official '+m.sourceLabel+' ↗';
     $('#storyFacts').innerHTML=m.stats.map(s=>`<div class="story-fact"><small>${escapeHTML(s[0])}</small><strong>${escapeHTML(s[1])}</strong></div>`).join('');
     $('#storyDiscovery').textContent=m.discovery;
