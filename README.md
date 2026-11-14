@@ -82,6 +82,7 @@ ECHOES/
 ├── js/
 │   ├── data.js             # 16 mission records, stories, questions, sources
 │   └── app.js              # Navigation, atlas, quizzes, labs, passport
+│   └── image-urls.js       # real url links of images
 ├── assets/
 │   ├── favicon.svg
 │   └── images/             # 20 bundled SVG illustrations
