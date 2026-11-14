@@ -127,14 +127,6 @@ The site does **not** require users to register. Story progress and quiz complet
 
 **AI assistance was used in the development of this project.** OpenAI ChatGPT assisted with concept development, writing and structuring story content/
 
-## 🧪 Suggested Demo Flow
-
-1. Open the homepage and introduce the challenge in one sentence.
-2. Enter **The Atlas**, switch between Mars and the Moon, and select a mission.
-3. Open Ingenuity's three-chapter story and show its NASA source.
-4. Answer a Mission Detective question and visit **My Passport**.
-5. Demonstrate the **5 planned / 72 completed flights** interaction in the Science Lab.
-6. Show the NASA sources and the downloadable certificate.
 ---
 
 **ECHOES — When Machines Tell Their Stories**  
